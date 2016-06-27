@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mijn Toernooi</title>
+	<meta charset="utf-8">
+	<meta name="" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+	<nav>
+		<h1 class="mijn-toernooi">Mijn Toernooi</h1>
+		<ul>
+			<li>Home</li>
+			<li>Programma</li>
+			<li>Uitslagen</li>
+			<li>Stand</li>
+		</ul>
+	</nav>
+	<section class="home">
+		<h4 class="">Welkom bij Mijn Toernooi!</h4>
+		<span class="teams">Deelnemende teams: </span>
+		<ul class="team-list" ng-controller="myCtrl">
+			<li ng-repeat="team in teams">{{teams}}</li>
+		</ul>
+		
+	</section>
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
