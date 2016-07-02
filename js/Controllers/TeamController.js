@@ -12,11 +12,12 @@ angular.module('myApp')
 			"FC Knudde" 
 		];
 
-		vm.newTeam = "";
+		vm.newTeamName = "";
 
 		vm.addNewTeam = function(){
 
-			vm.teams.push(vm.newTeam);
+			vm.teams.push(vm.newTeamName);
+			vm.newTeamName = "";
 			
 		}
 
