@@ -6,6 +6,7 @@
 	<meta name="" content="">
 	<meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body ng-app="myApp">
@@ -24,18 +25,23 @@
 		
 		<span class="teams">Deelnemende teams: </span>
 		<ul class="team-list">
-			<li ng-repeat="team in vm.teams">{{team}}</li>
+			<li ng-repeat="team in vm.teams">
+				<span class="team-name">{{team}}</span>
+				<i class="fa fa-times" aria-hidden="true" ng-click="vm.removeTeam(team)"></i>
+			</li>
 		</ul>
 
 		<p>Voeg een team toe</p>
 		<form name="addTeamForm" class="add-team-form" ng-submit="vm.addNewTeam()">
 			<input type="text" ng-model="vm.newTeam" placeholder="Naam team" required/>
-			<input type="submit" ng-disabled="addTeamForm.$disabled"/>
+			<input type="submit" ng-disabled="addTeamForm.$disabled" value="Voeg toe"/>
 		</form>
 
 	</section>
 
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<!-- controllers -->
+	<script type="text/javascript" src="js/controllers/TeamController.js"></script>
 </body>
 </html>
